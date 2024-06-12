@@ -9,7 +9,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        Violet: "#9e7f66",
+        Violet: "#5964E0",
         LightViolet: "#939BF4",
         VeryDarkBlue: "#19202D",
         Midnight: "#121721",

@@ -1,7 +1,11 @@
-export default function Home() {
+import Header from "./components/Header";
+
+export default function Page() {
   return (
     <main>
-      <h1>hello world- main page</h1>
+      <Header />
+      <nav></nav>
+      <section></section>
     </main>
   );
 }
