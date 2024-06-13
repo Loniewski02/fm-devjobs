@@ -19,7 +19,7 @@ const config: Config = {
         DarkGray: "#6E8098",
       },
       fontFamily: {
-        montserrat: ["var(--font-kumbh)"],
+        kumbh: ["var(--font-kumbh)"],
       },
     },
   },
