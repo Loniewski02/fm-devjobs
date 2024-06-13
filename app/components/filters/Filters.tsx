@@ -18,7 +18,7 @@ const INPUTS = [
 
 const Filters = () => {
   return (
-    <section className="-mt-10 px-6 md:px-10">
+    <section className="sectionX -mt-10">
       <Wrapper className="relative flex items-center overflow-hidden rounded-md bg-White">
         {INPUTS.map((item, index) => (
           <div

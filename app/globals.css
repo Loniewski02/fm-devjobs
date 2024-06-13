@@ -7,3 +7,9 @@
     @apply bg-LightGray;
   }
 }
+
+@layer utilities {
+  .sectionX {
+    @apply px-6 md:px-10;
+  }
+}

@@ -1,13 +1,19 @@
-import Wrapper from "./layout/Wrapper";
+import Wrapper from "./Wrapper";
 import Logo from "@/public/assets/desktop/logo.svg";
 import Sun from "@/public/assets/desktop/icon-sun.svg";
 import Moon from "@/public/assets/desktop/icon-moon.svg";
+import Link from "next/link";
 
 const Header = () => {
   return (
-    <header className="h-[136px] bg-[url('/assets/mobile/bg-pattern-header.svg')] bg-cover bg-no-repeat px-6 pt-8 md:h-[160px] md:rounded-bl-[100px] md:bg-[url('/assets/tablet/bg-pattern-header.svg')] md:px-10 md:pt-[42px] lg:bg-[url('/assets/desktop/bg-pattern-header.svg')]">
+    <header className="sectionX h-[136px] bg-[url('/assets/mobile/bg-pattern-header.svg')] bg-cover bg-no-repeat pt-8 md:h-[160px] md:rounded-bl-[100px] md:bg-[url('/assets/tablet/bg-pattern-header.svg')] md:pt-[42px] lg:bg-[url('/assets/desktop/bg-pattern-header.svg')]">
       <Wrapper className="flex items-center justify-between ">
-        <Logo />
+        <h1 className="relative">
+          <Link href="/">
+            <Logo />
+            <span className="absolute hidden h-0 w-0">devjobs</span>
+          </Link>
+        </h1>
         <div className="flex items-center gap-4">
           <Sun />
           <button
