@@ -9,7 +9,9 @@ const Article = ({
 }) => {
   return (
     <article className="flex flex-col gap-6 py-8 last:pb-0 md:py-5">
-      <h3 className="text-xl font-bold text-VeryDarkBlue md:mb-2">{title}</h3>
+      <h3 className="text-xl font-bold text-VeryDarkBlue md:mb-2 dark:text-White">
+        {title}
+      </h3>
       <p className="leading-[26px] text-DarkGray">{data.content}</p>
       <ul className={`space-y-2`}>
         {data.items.map((item, index) => (

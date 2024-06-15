@@ -17,7 +17,7 @@ const JobItem: React.FC<Props> = ({ data }) => {
   return (
     <Link
       href={`${data._id.toString()}`}
-      className="relative block min-h-[230px] w-full max-w-[330px] rounded-md bg-White px-8 py-12 lg:max-w-[350px]"
+      className="relative block min-h-[230px] w-full max-w-[330px] rounded-md bg-White px-8 py-12 lg:max-w-[350px] dark:bg-VeryDarkBlue"
     >
       <div
         style={{ backgroundColor: data.logoBackground }}
@@ -31,7 +31,9 @@ const JobItem: React.FC<Props> = ({ data }) => {
           <span className="block h-1 w-1 rounded-full bg-DarkGray" />
           {data.contract}
         </p>
-        <h3 className="text-xl font-bold text-VeryDarkBlue">{data.position}</h3>
+        <h3 className="text-xl font-bold text-VeryDarkBlue dark:text-White">
+          {data.position}
+        </h3>
         <p className="text-DarkGray">{data.company}</p>
       </div>
       <p className="text-sm font-bold text-Violet">{data.location}</p>

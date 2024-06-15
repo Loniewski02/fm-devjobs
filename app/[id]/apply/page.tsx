@@ -1,13 +1,16 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
+
 import { fetchSingleJob } from "@/utils/request";
+
 import LoadingSpinner from "@/components/UI/LoadingSpinner";
+import ApplyHeading from "@/components/apply/ApplyHeading";
 
 const ApplyPage = () => {
   const { id }: { id: string } = useParams();
   const [loading, setLoading] = useState(true);
-  const [data, setData] = useState(null);
+  const [data, setData] = useState<JobDetailType | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -31,7 +34,14 @@ const ApplyPage = () => {
   } else if (!data) {
     content = <p>No data found.</p>;
   } else if (!loading && data) {
-    content = <p>{id}</p>;
+    content = (
+      <ApplyHeading
+        bgColor={data.logoBackground}
+        image={data.logo}
+        company={data.company}
+        position={data.position}
+      />
+    );
   }
 
   return <main>{content}</main>;

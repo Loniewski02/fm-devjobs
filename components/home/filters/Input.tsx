@@ -8,9 +8,7 @@ type Props = {
 };
 
 const Input: React.FC<Props> = ({ id, placeholder }) => {
-  const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-   
-  };
+  const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {};
 
   return (
     <div className={`border:Gray relative w-full md:border-r`}>
@@ -25,7 +23,7 @@ const Input: React.FC<Props> = ({ id, placeholder }) => {
         type="text"
         id={id}
         onChange={changeHandler}
-        className="w-full px-6 py-7 text-base md:pl-16"
+        className="w-full bg-transparent px-6 py-7 text-base md:pl-16"
         placeholder={placeholder}
       />
     </div>
