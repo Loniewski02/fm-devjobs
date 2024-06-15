@@ -1,10 +1,11 @@
 "use client";
 import { useState, useEffect } from "react";
 
-import Wrapper from "../layout/Wrapper";
-import JobItem from "./JobItem";
 import { fetchAllJobs } from "@/utils/request";
-import LoadingSpinner from "../UI/LoadingSpinner";
+
+import JobItem from "./JobItem";
+import LoadingSpinner from "@/components/UI/LoadingSpinner";
+import Wrapper from "@/components/layout/Wrapper";
 
 const JobsContainer = () => {
   const [isFullArray, setIsFullArray] = useState<boolean>(false);

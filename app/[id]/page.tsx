@@ -1,9 +1,12 @@
 "use client";
 import { useState, useEffect } from "react";
-
 import { fetchSingleJob } from "@/utils/request";
 import { useParams } from "next/navigation";
-import LoadingSpinner from "../components/UI/LoadingSpinner";
+
+import LoadingSpinner from "@/components/UI/LoadingSpinner";
+import DetailHeading from "@/components/job-details/DetailHeading";
+import DetailContent from "@/components/job-details/DetailContent";
+import DetailFooter from "@/components/job-details/DetailFooter";
 
 const Page = () => {
   const { id }: { id: string } = useParams();
@@ -34,7 +37,18 @@ const Page = () => {
   } else if (!loading && data) {
     content = (
       <>
-        <h1>{data.company}</h1>
+        <DetailHeading
+          company={data.company}
+          url={data.website}
+          bgColor={data.logoBackground}
+          image={data.logo}
+        />
+        <DetailContent data={data} />
+        <DetailFooter
+          position={data.position}
+          company={data.company}
+          id={data._id}
+        />
       </>
     );
   }

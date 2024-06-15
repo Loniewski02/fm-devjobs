@@ -1,4 +1,4 @@
-import Wrapper from "../layout/Wrapper";
+import Wrapper from "@/components/layout/Wrapper";
 import Controls from "./Controls";
 import Input from "./Input";
 
