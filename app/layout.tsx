@@ -16,11 +16,7 @@ export const metadata: Metadata = {
     "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid veniam modi quibusdam dolor inventore. Tenetur assumenda cumque perferendis eos aspernatur!",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({children,}: Readonly<{children: React.ReactNode;}>) {
   return (
     <html lang="en">
       <body className={`${fontKumbh.variable} min-h-[100dvh] font-kumbh`}>

@@ -1,11 +1,23 @@
 import Link from "next/link";
 
-const JobItem: React.FC<{ data: JobItemType }> = ({ data }) => {
-  const url = `/${data.id}/${data.company.toLowerCase()}-${data.position.toLowerCase().split(" ").join("-")}`;
+type Props = {
+  data: {
+    _id: number;
+    company: string;
+    contract: string;
+    location: string;
+    logo: string;
+    logoBackground: string;
+    position: string;
+    postedAt: string;
+  };
+};
+
+const JobItem: React.FC<Props> = ({ data }) => {
   return (
     <Link
-      href={url}
-      className="relative block min-h-[230px] w-full max-w-[330px] rounded-md bg-White p-8 py-12 lg:max-w-[350px]"
+      href={`${data._id.toString()}`}
+      className="relative block min-h-[230px] w-full max-w-[330px] rounded-md bg-White px-8 py-12 lg:max-w-[350px]"
     >
       <div
         style={{ backgroundColor: data.logoBackground }}
