@@ -3,16 +3,20 @@ const Button = ({
   className,
   onClick,
   label,
+  disabled,
   type,
 }: {
   children: React.ReactNode;
   className?: string;
+  disabled?: boolean;
   type?: "submit" | "button" | "reset";
-  onClick: () => void;
+  onClick?: () => void;
   label: string;
 }) => {
   return (
     <button
+      aria-disabled={disabled}
+      disabled={disabled}
       type={!type ? "button" : type}
       aria-label={label}
       onClick={onClick}

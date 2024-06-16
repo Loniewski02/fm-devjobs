@@ -19,3 +19,12 @@ type JobDetailType = {
   };
   website: string;
 };
+
+type ApplyData = {
+  name: string;
+  "last-name": string;
+  email: string;
+  phone: string;
+  resume: File;
+  "cover-letter": string;
+};

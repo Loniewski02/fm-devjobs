@@ -1,5 +1,9 @@
+"use client";
+import { useFormState } from "react-dom";
 import Button from "../UI/Button";
 import Wrapper from "../layout/Wrapper";
+import { FormSubmit } from "@/utils/request";
+import Submit from "./Submit";
 
 const INPUTS = [
   {
@@ -39,11 +43,37 @@ const INPUTS = [
   },
 ];
 
-const ApplyForm = () => {
+type State = {
+  name: string;
+  "last-name": string;
+  email: string;
+  phone: string;
+  resume: string;
+  "cover-letter": string;
+};
+
+const initialState = {
+  name: "",
+  "last-name": "",
+  email: "",
+  phone: "",
+  resume: "",
+  "cover-letter": "",
+};
+
+const ApplyForm = ({ id }: { id: number }) => {
+  const [state, action] = useFormState<State, FormData>(
+    (state, payload) => FormSubmit(state, payload, id),
+    initialState,
+  );
+
   return (
     <section className="sectionX pb-16 pt-6 md:py-12">
       <Wrapper className="rounded-md bg-White px-6 py-10 dark:bg-VeryDarkBlue md:max-w-[730px] md:px-12">
-        <form action="" className="flex flex-col gap-4 md:grid md:grid-cols-2">
+        <form
+          action={action}
+          className="flex flex-col gap-4 md:grid md:grid-cols-2"
+        >
           {INPUTS.map((input) => (
             <div key={input.id} className="flex flex-col gap-2">
               <label
@@ -75,14 +105,7 @@ const ApplyForm = () => {
               name="cover-letter"
             />
           </div>
-          <Button
-            onClick={() => {}}
-            type="submit"
-            label="submit"
-            className="col-start-2 row-start-6 mt-4 w-[150px] place-self-end self-end"
-          >
-            Submit
-          </Button>
+          <Submit />
         </form>
       </Wrapper>
     </section>

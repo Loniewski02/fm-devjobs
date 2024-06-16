@@ -43,7 +43,7 @@ const ApplyPage = () => {
           company={data.company}
           position={data.position}
         />
-        <ApplyForm />
+        <ApplyForm id={data._id} />
       </>
     );
   }

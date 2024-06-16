@@ -39,3 +39,15 @@ export async function fetchSingleJob(id: string) {
     return null;
   }
 }
+
+export async function FormSubmit(prevState: any, formData: any, id: number) {
+  const res = await fetch(`${apiDomain}/${id}/apply`, {
+    method: "POST",
+    body: formData,
+  });
+
+  const data = await res.json();
+  if (!data) return prevState;
+
+  return data;
+}
