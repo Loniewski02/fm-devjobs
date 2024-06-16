@@ -1,10 +1,9 @@
-import type { NextApiRequest } from "next";
-
 import connectDB from "@/config/database";
 import Job from "@/models/Job";
+import { NextRequest } from "next/server";
 
 // GET /api
-export const GET = async (req: NextApiRequest) => {
+export const GET = async (req: Request | NextRequest) => {
   try {
     await connectDB();
 
