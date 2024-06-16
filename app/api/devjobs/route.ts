@@ -1,9 +1,9 @@
 import connectDB from "@/config/database";
 import Job from "@/models/Job";
-import type { VercelRequest } from "@vercel/node";
+import { NextRequest } from "next/server";
 
 // GET /api
-export const GET = async (req: VercelRequest) => {
+export const GET = async (req: Request | NextRequest) => {
   try {
     await connectDB();
 
