@@ -1,3 +1,5 @@
+"use server";
+
 const apiDomain = process.env.NEXT_PUBLIC_API_DOMAIN || null;
 
 export async function fetchAllJobs() {
@@ -6,7 +8,7 @@ export async function fetchAllJobs() {
       return [];
     }
 
-    const res = await fetch(`${apiDomain}/devjobs`);
+    const res = await fetch(`${apiDomain}`);
 
     if (!res.ok) {
       throw new Error("Failed to fetch data");
@@ -25,7 +27,7 @@ export async function fetchSingleJob(id: string) {
       return null;
     }
 
-    const res = await fetch(`${apiDomain}/devjobs/${id}`);
+    const res = await fetch(`${apiDomain}/${id}`);
 
     if (!res.ok) {
       throw new Error("Failed to fetch data");

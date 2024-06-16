@@ -42,10 +42,10 @@ const Controls = () => {
       </button>
       <ApplyFiltersButton
         aria-label="search"
-        className="grid h-12 w-12 place-items-center rounded-md bg-Violet font-bold text-White md:w-max"
+        className="grid place-items-center text-White md:block md:h-auto md:w-max"
       >
-        <Search className="md:hidden" />
-        <span className="hidden px-[14px] md:block">Search</span>
+        <Search className="block md:hidden" />
+        <span className="hidden md:block">Search</span>
       </ApplyFiltersButton>
     </div>
   );

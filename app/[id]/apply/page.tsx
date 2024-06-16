@@ -6,6 +6,7 @@ import { fetchSingleJob } from "@/utils/request";
 
 import LoadingSpinner from "@/components/UI/LoadingSpinner";
 import ApplyHeading from "@/components/apply/ApplyHeading";
+import ApplyForm from "@/components/apply/ApplyForm";
 
 const ApplyPage = () => {
   const { id }: { id: string } = useParams();
@@ -35,12 +36,15 @@ const ApplyPage = () => {
     content = <p>No data found.</p>;
   } else if (!loading && data) {
     content = (
-      <ApplyHeading
-        bgColor={data.logoBackground}
-        image={data.logo}
-        company={data.company}
-        position={data.position}
-      />
+      <>
+        <ApplyHeading
+          bgColor={data.logoBackground}
+          image={data.logo}
+          company={data.company}
+          position={data.position}
+        />
+        <ApplyForm />
+      </>
     );
   }
 

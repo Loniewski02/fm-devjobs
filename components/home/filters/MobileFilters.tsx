@@ -27,9 +27,9 @@ const MobileFilters = () => {
         onClick={() => {
           setIsMobileFiltersShown(false);
         }}
-        className="absolute z-20 h-full w-full bg-Midnight opacity-30"
+        className="absolute z-20 h-full w-full bg-[rgba(18,23,23,.7)] backdrop-blur-md"
       />
-      <div className="top-1/2 z-30 w-full overflow-hidden rounded-md bg-White">
+      <div className="top-1/2 z-30 w-full overflow-hidden rounded-md bg-White dark:bg-VeryDarkBlue">
         <div className="relative border-b border-Gray">
           <label
             htmlFor="location"
@@ -42,7 +42,7 @@ const MobileFilters = () => {
             id="location"
             type="text"
             placeholder="Filter by location..."
-            className="w-full py-6 pl-14 pr-6"
+            className="w-full bg-transparent py-6 pl-14 pr-6"
           />
         </div>
         <div className="p-6">
@@ -59,9 +59,7 @@ const MobileFilters = () => {
               Full Time Only
             </span>
           </button>
-          <ApplyFiltersButton className="w-full rounded-md bg-Violet py-4 font-bold text-White">
-            Search
-          </ApplyFiltersButton>
+          <ApplyFiltersButton className="w-full">Search</ApplyFiltersButton>
         </div>
       </div>
     </section>

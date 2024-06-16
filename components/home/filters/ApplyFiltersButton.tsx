@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { usePathname, useSearchParams, useRouter } from "next/navigation";
 
 import { FiltersContext } from "@/app/_providers/FilterContext";
+import Button from "@/components/UI/Button";
 
 const ApplyFiltersButton = ({
   className,
@@ -43,9 +44,9 @@ const ApplyFiltersButton = ({
   };
 
   return (
-    <button aria-label="search" onClick={filterHandler} className={className}>
+    <Button label="search" onClick={filterHandler} className={className}>
       {children}
-    </button>
+    </Button>
   );
 };
 
