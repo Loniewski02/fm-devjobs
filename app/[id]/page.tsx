@@ -33,7 +33,11 @@ const Page = () => {
   if (loading) {
     content = <LoadingSpinner loading={loading} />;
   } else if (!data) {
-    content = <p>No data found.</p>;
+    content = (
+      <h2 className="mt-12 text-center text-3xl font-bold text-VeryDarkBlue dark:text-White">
+        No data found.
+      </h2>
+    );
   } else if (!loading && data) {
     content = (
       <>

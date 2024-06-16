@@ -1,8 +1,8 @@
-import Wrapper from "./Wrapper";
-import Logo from "@/public/assets/desktop/logo.svg";
-import Sun from "@/public/assets/desktop/icon-sun.svg";
-import Moon from "@/public/assets/desktop/icon-moon.svg";
 import Link from "next/link";
+
+import Wrapper from "./Wrapper";
+import ThemeSwitchBtn from "../UI/ThemeSwitchBtn";
+import Logo from "@/public/assets/desktop/logo.svg";
 
 const Header = () => {
   return (
@@ -14,16 +14,7 @@ const Header = () => {
             <span className="absolute hidden h-0 w-0">devjobs</span>
           </Link>
         </h1>
-        <div className="flex items-center gap-4">
-          <Sun />
-          <button
-            className="relative h-6 w-12 rounded-xl bg-White p-[5px]"
-            aria-label="theme change btn"
-          >
-            <span className="absolute left-[5px] top-[5px] block h-[14px] w-[14px] rounded-full bg-Violet" />
-          </button>
-          <Moon />
-        </div>
+        <ThemeSwitchBtn />
       </Wrapper>
     </header>
   );

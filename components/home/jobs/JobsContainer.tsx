@@ -34,7 +34,11 @@ const JobsContainer = () => {
   if (loading) {
     content = <LoadingSpinner loading={loading} />;
   } else if (data.length === 0) {
-    content = <p>No jobs found.</p>;
+    content = (
+      <h2 className="mt-12 text-center text-3xl font-bold text-VeryDarkBlue dark:text-White">
+        No data found.
+      </h2>
+    );
   } else if (!loading && data.length > 0) {
     const filteredData = data.filter((item) => {
       const name = searchParams.get("name") || null;

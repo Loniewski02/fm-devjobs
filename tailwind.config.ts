@@ -21,6 +21,20 @@ const config: Config = {
       fontFamily: {
         kumbh: ["var(--font-kumbh)"],
       },
+      keyframes: {
+        dark: {
+          from: { left: "5px" },
+          to: { left: "29px" },
+        },
+        light: {
+          from: { left: "29px" },
+          to: { left: "5px" },
+        },
+      },
+      animation: {
+        dark: "dark .3s ease-in-out forwards",
+        light: "light .3s ease-in-out forwards",
+      },
     },
   },
   plugins: [],

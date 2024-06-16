@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Kumbh_Sans } from "next/font/google";
 import "./globals.css";
+
 import Header from "@/components/layout/Header";
+import ThemeProviders from "./theme-providers";
 
 const fontKumbh = Kumbh_Sans({
   subsets: ["latin"],
@@ -16,12 +18,16 @@ export const metadata: Metadata = {
     "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid veniam modi quibusdam dolor inventore. Tenetur assumenda cumque perferendis eos aspernatur!",
 };
 
-export default function RootLayout({children,}: Readonly<{children: React.ReactNode;}>) {
+export default function RootLayout({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`${fontKumbh.variable} min-h-[100dvh] font-kumbh`}>
-        <Header />
-        {children}
+        <ThemeProviders>
+          <Header />
+          {children}
+        </ThemeProviders>
       </body>
     </html>
   );
