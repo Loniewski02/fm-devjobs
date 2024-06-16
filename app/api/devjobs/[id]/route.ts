@@ -1,10 +1,10 @@
 import connectDB from "@/config/database";
 import Job from "@/models/Job";
-import { NextRequest } from "next/server";
+import type { VercelRequest } from "@vercel/node";
 
 // GET /api/[id]
 export const GET = async (
-  req: Request | NextRequest,
+  req: VercelRequest,
   { params }: { params: { id: string } },
 ) => {
   try {
