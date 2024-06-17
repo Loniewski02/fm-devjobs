@@ -6,7 +6,7 @@ import Moon from "@/public/assets/desktop/icon-moon.svg";
 import { useEffect, useState } from "react";
 
 const ThemeSwitchBtn = () => {
-  const { setTheme, resolvedTheme, theme } = useTheme();
+  const { setTheme, resolvedTheme } = useTheme();
   const [isDark, setIsDark] = useState<boolean | null>(null);
 
   useEffect(() => {
@@ -35,7 +35,7 @@ const ThemeSwitchBtn = () => {
         aria-label="theme change btn"
       >
         <span
-          className={`${isDark ? "animate-dark" : "animate-light"}  absolute top-[5px] block h-[14px] w-[14px] rounded-full bg-Violet`}
+          className={`${isDark ? "translate-x-[24px]" : "translate-x-[0px]"} absolute top-[5px] block h-[14px] w-[14px] rounded-full bg-Violet transition`}
         />
       </button>
       <Moon />

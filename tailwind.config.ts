@@ -22,14 +22,6 @@ const config: Config = {
         kumbh: ["var(--font-kumbh)"],
       },
       keyframes: {
-        dark: {
-          from: { left: "5px" },
-          to: { left: "29px" },
-        },
-        light: {
-          from: { left: "29px" },
-          to: { left: "5px" },
-        },
         show: {
           from: { right: "-150%" },
           to: { right: "32px" },
@@ -40,8 +32,6 @@ const config: Config = {
         },
       },
       animation: {
-        dark: "dark .3s ease-in-out forwards",
-        light: "light .3s ease-in-out forwards",
         show: "show 1s ease-in-out forwards",
         hide: "hide 1s ease-in-out forwards",
       },

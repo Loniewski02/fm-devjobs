@@ -38,8 +38,6 @@ type Input = {
   name: string;
   placeholder: string;
   type: string;
-  className?: string;
-  grid?: string;
   isTextarea?: boolean;
   validity: (val: string) => boolean;
   required: boolean;
