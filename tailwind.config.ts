@@ -30,10 +30,20 @@ const config: Config = {
           from: { left: "29px" },
           to: { left: "5px" },
         },
+        show: {
+          from: { right: "-150%" },
+          to: { right: "32px" },
+        },
+        hide: {
+          from: { right: "32px" },
+          to: { right: "-150%" },
+        },
       },
       animation: {
         dark: "dark .3s ease-in-out forwards",
         light: "light .3s ease-in-out forwards",
+        show: "show 1s ease-in-out forwards",
+        hide: "hide 1s ease-in-out forwards",
       },
     },
   },

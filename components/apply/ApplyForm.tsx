@@ -21,11 +21,21 @@ const initialState = {
   },
 };
 
-const ApplyForm = ({ id }: { id: number }) => {
+const ApplyForm = ({
+  id,
+  position,
+  company,
+  onSuccess,
+}: {
+  id: number;
+  position: string;
+  company: string;
+  onSuccess: () => void;
+}) => {
   const [initial, setInitial] = useState(true);
   const [reset, setReset] = useState(true);
   const [state, action] = useFormState<ApplyData, FormData>(
-    (state, payload) => FormSubmit(state, payload, id),
+    (state, payload) => FormSubmit(state, payload, id, company, position),
     initialState,
   );
 
@@ -33,6 +43,7 @@ const ApplyForm = ({ id }: { id: number }) => {
     if (state.status === "success") {
       setReset(true);
       setInitial(true);
+      onSuccess();
     }
   }, [state.status]);
 
