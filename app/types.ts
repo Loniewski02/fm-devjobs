@@ -21,10 +21,26 @@ type JobDetailType = {
 };
 
 type ApplyData = {
+  status: string;
+  data: {
+    name: string;
+    "last-name": string;
+    email: string;
+    phone: string;
+    resume: File | null;
+    "cover-letter": string;
+  };
+};
+
+type Input = {
+  id: string;
+  label: string;
   name: string;
-  "last-name": string;
-  email: string;
-  phone: string;
-  resume: File;
-  "cover-letter": string;
+  placeholder: string;
+  type: string;
+  className?: string;
+  grid?: string;
+  isTextarea?: boolean;
+  validity: (val: string) => boolean;
+  required: boolean;
 };
