@@ -17,7 +17,7 @@ const JobItem: React.FC<Props> = ({ data }) => {
   return (
     <Link
       href={`${data._id.toString()}`}
-      className="relative block min-h-[230px] w-full max-w-[330px] rounded-md bg-White px-8 py-12 lg:max-w-[350px] dark:bg-VeryDarkBlue"
+      className="relative block min-h-[230px] w-full max-w-[330px] rounded-md bg-White px-8 py-12 transition hover:bg-[#7db0ee50]  active:scale-95 dark:bg-VeryDarkBlue dark:hover:bg-[#7db0ee50] md:py-8 lg:max-w-[350px]"
     >
       <div
         style={{ backgroundColor: data.logoBackground }}

@@ -1,18 +1,23 @@
 "use client";
 import { useContext } from "react";
+import { useSearchParams } from "next/navigation";
 
 import { FiltersContext } from "@/app/_providers/FilterContext";
 
 import Search from "@/public/assets/desktop/icon-search.svg";
 import Location from "@/public/assets/desktop/icon-location.svg";
 
-type Props = {
+const Input = ({
+  id,
+  placeholder,
+  className,
+}: {
   id: string;
   placeholder: string;
-};
-
-const Input: React.FC<Props> = ({ id, placeholder }) => {
+  className?: string;
+}) => {
   const { setName, setLocation } = useContext(FiltersContext);
+  const searchParams = useSearchParams();
 
   const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     let value = event.target.value;
@@ -21,9 +26,20 @@ const Input: React.FC<Props> = ({ id, placeholder }) => {
     if (id === "location") setLocation(value);
   };
 
+  let defaultVal;
+
+  const params = new URLSearchParams(searchParams);
+  if (params.get("location") && id === "location") {
+    defaultVal = params.get("location") || "";
+  }
+
+  if (params.get("name") && id === "name") {
+    defaultVal = params.get("name") || "";
+  }
+
   return (
     <div
-      className={`${id === "location" && "hidden md:block"} border:Gray relative w-full md:border-r`}
+      className={`${id === "location" && "hidden md:block"} ${className && className} border:Gray relative w-full md:border-r`}
     >
       <label
         htmlFor={id}
@@ -35,6 +51,7 @@ const Input: React.FC<Props> = ({ id, placeholder }) => {
       <input
         type="text"
         id={id}
+        defaultValue={defaultVal}
         onChange={changeHandler}
         className="w-full bg-transparent px-6 py-7 text-base md:pl-16"
         placeholder={placeholder}

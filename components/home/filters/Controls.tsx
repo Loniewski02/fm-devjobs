@@ -21,7 +21,7 @@ const Controls = () => {
   };
 
   return (
-    <div className="flex items-center gap-3 pr-4 md:gap-7 md:pl-5">
+    <div className="flex items-center justify-between gap-3 pr-4 md:gap-7 md:pl-5 lg:w-full lg:max-w-[345px]">
       <button
         onClick={mobileFiltersHandler}
         aria-label="show filters"
@@ -38,11 +38,16 @@ const Controls = () => {
         >
           <Selected className={`${isFullTime ? "block" : "hidden"}`} />
         </span>
-        <span className="text-VeryDarkBlue dark:text-White">Full Time</span>
+        <span className="text-VeryDarkBlue dark:text-White lg:hidden">
+          Full Time
+        </span>
+        <span className="hidden font-bold text-VeryDarkBlue dark:text-White lg:block">
+          Full Time Only
+        </span>
       </button>
       <ApplyFiltersButton
         aria-label="search"
-        className="grid place-items-center text-White md:block md:h-auto md:w-max"
+        className="grid place-items-center text-White md:block md:h-auto md:w-max lg:w-[120px]"
       >
         <Search className="block md:hidden" />
         <span className="hidden md:block">Search</span>

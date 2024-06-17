@@ -20,7 +20,7 @@ const Button = ({
       type={!type ? "button" : type}
       aria-label={label}
       onClick={onClick}
-      className={`${className && className} rounded-md bg-Violet p-4 font-bold text-White`}
+      className={`${className && className} rounded-md bg-Violet p-4 font-bold text-White transition hover:bg-LightViolet active:scale-95`}
     >
       {children}
     </button>

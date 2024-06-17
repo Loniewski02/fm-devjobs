@@ -7,6 +7,7 @@ import { fetchAllJobs } from "@/utils/request";
 import JobItem from "./JobItem";
 import LoadingSpinner from "@/components/UI/LoadingSpinner";
 import Wrapper from "@/components/layout/Wrapper";
+import Button from "@/components/UI/Button";
 
 const JobsContainer = () => {
   const [isFullArray, setIsFullArray] = useState<boolean>(false);
@@ -41,29 +42,28 @@ const JobsContainer = () => {
     );
   } else if (!loading && data.length > 0) {
     const filteredData = data.filter((item) => {
-      const name = searchParams.get("name") || null;
-      const location = searchParams.get("location") || null;
-      const contract = searchParams.get("contract") || null;
+      const name = searchParams.get("name")?.toLowerCase() || null;
+      const location = searchParams.get("location")?.toLowerCase() || null;
+      const contract =
+        searchParams.get("contract")?.toLowerCase().split("-").join(" ") ||
+        null;
 
       let matches = true;
 
       if (contract) {
-        matches =
-          matches &&
-          item.contract.toLowerCase() === contract.split("-").join(" ");
+        matches = matches && item.contract.toLowerCase() === contract;
       }
 
       if (name) {
         matches =
-          (matches &&
-            item.company.toLowerCase().includes(name.toLowerCase())) ||
-          item.position.toLowerCase().includes(name.toLowerCase());
+          (matches && item.company.toLowerCase().includes(name)) ||
+          item.position.toLowerCase().includes(name) ||
+          item.requirements.content.toLowerCase().includes(name) ||
+          item.role.content.toLowerCase().includes(name);
       }
 
       if (location) {
-        matches =
-          matches &&
-          item.location.toLowerCase().includes(location.toLowerCase());
+        matches = matches && item.location.toLowerCase().includes(location);
       }
 
       return matches;
@@ -73,18 +73,24 @@ const JobsContainer = () => {
 
     content = (
       <>
+        {jobArray.length === 0 && (
+          <p className="text-2xl text-VeryDarkBlue dark:text-White">
+            No jobs found.
+          </p>
+        )}
         <div className="flex flex-wrap justify-center gap-x-3 gap-y-12 md:gap-y-14 lg:gap-x-[30px] lg:gap-y-16 xl:justify-start">
           {jobArray.map((item) => (
             <JobItem key={item._id} data={item} />
           ))}
         </div>
         {!isFullArray && filteredData.length > 12 && (
-          <button
+          <Button
+            label="load more jobs"
             onClick={() => setIsFullArray(true)}
-            className="mt-8 w-max self-center rounded-md bg-Violet px-8 py-4 font-bold text-White md:mt-14"
+            className="mt-8 self-center md:mt-14"
           >
             Load More
-          </button>
+          </Button>
         )}
       </>
     );

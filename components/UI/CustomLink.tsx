@@ -12,7 +12,7 @@ const CustomLink = ({
   return (
     <Link
       href={url}
-      className={`${className && className} block w-full rounded-md bg-Violet px-5  py-4 text-center font-bold text-White md:mt-0 md:w-max md:min-w-[140px]`}
+      className={`${className && className} block w-full rounded-md bg-Violet px-5 py-4 text-center  font-bold text-White hover:bg-LightViolet active:scale-95 md:mt-0 md:w-max md:min-w-[140px]`}
     >
       {children}
     </Link>
