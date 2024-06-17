@@ -1,7 +1,14 @@
-export default function Home() {
+import Filters from "@/components/home/filters/Filters";
+import JobsContainer from "@/components/home/jobs/JobsContainer";
+import DataProvider from "./_providers/FilterContext";
+
+export default function Page() {
   return (
     <main>
-      <h1>hello world- main page</h1>
+      <DataProvider>
+        <Filters />
+        <JobsContainer />
+      </DataProvider>
     </main>
   );
 }
