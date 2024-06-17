@@ -34,7 +34,7 @@ const Controls = () => {
         className="hidden h-12 w-max items-center gap-4 md:flex"
       >
         <span
-          className={`${isFullTime ? "bg-Violet opacity-100" : "bg-VeryDarkBlue opacity-10 dark:bg-[#979797]"} grid h-6 w-6 place-content-center rounded-[3px] transition`}
+          className={`${isFullTime ? "bg-Violet opacity-100" : "bg-VeryDarkBlue opacity-10 dark:bg-[#979797]"} grid h-6 w-6 place-content-center rounded-[3px] text-White transition`}
         >
           <Selected className={`${isFullTime ? "block" : "hidden"}`} />
         </span>
