@@ -31,12 +31,18 @@ const Page = () => {
   let content;
 
   if (loading) {
-    content = <LoadingSpinner loading={loading} />;
+    content = (
+      <section className="sectionX pb-16 pt-14 md:pt-[70px] lg:py-[105px]">
+        <LoadingSpinner loading={loading} />;
+      </section>
+    );
   } else if (!data) {
     content = (
-      <h2 className="mt-12 text-center text-3xl font-bold text-VeryDarkBlue dark:text-White">
-        No data found.
-      </h2>
+      <section className="sectionX pb-16 pt-14 md:pt-[70px] lg:py-[105px]">
+        <h2 className="mt-12 text-center text-3xl font-bold text-VeryDarkBlue dark:text-White">
+          No data found.
+        </h2>
+      </section>
     );
   } else if (!loading && data) {
     content = (
