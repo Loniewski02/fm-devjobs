@@ -22,7 +22,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html className="hidden" lang="en" suppressHydrationWarning>
       <body className={`${fontKumbh.variable} min-h-[100dvh] font-kumbh`}>
         <ThemeProviders>
           <Header />

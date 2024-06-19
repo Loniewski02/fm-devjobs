@@ -10,6 +10,8 @@ const ThemeSwitchBtn = () => {
   const [isDark, setIsDark] = useState<boolean | null>(null);
 
   useEffect(() => {
+    document.documentElement.classList.remove("hidden");
+
     if (resolvedTheme === "dark") {
       setIsDark(true);
       return;
